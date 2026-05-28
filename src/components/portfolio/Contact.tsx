@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { Github, Linkedin } from "./icons";
 import { Section } from "./Section";
 
 export function Contact() {
