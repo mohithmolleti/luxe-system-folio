@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { Github } from "./icons";
 import { Section, SectionHeader } from "./Section";
 
 const projects = [

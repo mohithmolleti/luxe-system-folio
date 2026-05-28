@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
+import { Github, Linkedin } from "./icons";
 
 export function Hero() {
   return (
