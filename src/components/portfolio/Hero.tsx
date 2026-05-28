@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { Github, Linkedin } from "./icons";
+import portrait from "@/assets/mohith.jpg";
 
 export function Hero() {
   return (
@@ -27,16 +28,60 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display font-bold tracking-[-0.04em] text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95]"
-        >
-          Mohith Kumar
-          <br />
-          <span className="text-gradient-hero">Molleti.</span>
-        </motion.h1>
+        <div className="flex flex-col md:flex-row md:items-center md:gap-10 gap-8">
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="font-display font-bold tracking-[-0.04em] text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] flex-1"
+          >
+            Mohith Kumar
+            <br />
+            <span className="text-gradient-hero">Molleti.</span>
+          </motion.h1>
+
+          {/* Profile portrait */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative shrink-0 self-start md:self-center"
+          >
+            {/* Animated conic ring */}
+            <div className="absolute -inset-[6px] rounded-full opacity-90 blur-[2px] group-hover:opacity-100 transition-opacity"
+              style={{
+                background:
+                  "conic-gradient(from 0deg, var(--electric), var(--plasma), var(--cyan-glow), var(--electric))",
+                animation: "spin 8s linear infinite",
+              }}
+            />
+            {/* Outer glow */}
+            <div className="absolute -inset-8 rounded-full bg-electric/30 blur-3xl opacity-60 group-hover:opacity-90 transition-opacity" />
+
+            <div className="relative size-44 md:size-56 rounded-full overflow-hidden ring-1 ring-white/15 bg-background">
+              <img
+                src={portrait}
+                alt="Mohith Kumar Molleti"
+                className="absolute inset-0 h-full w-full object-cover scale-110 group-hover:scale-125 transition-transform duration-[1200ms] ease-out"
+              />
+              {/* Soft top vignette for premium feel */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+
+              {/* Hover MMK overlay */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-[2px] bg-background/35">
+                <span
+                  className="font-display font-bold text-5xl md:text-6xl tracking-tight text-gradient-hero"
+                  style={{
+                    textShadow:
+                      "0 0 24px color-mix(in oklab, var(--cyan-glow) 60%, transparent), 0 0 60px color-mix(in oklab, var(--electric) 40%, transparent)",
+                  }}
+                >
+                  MMK
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
